@@ -1,3 +1,10 @@
+import { Helmet } from 'react-helmet-async'
+
 export const SignIn = () => {
-  return <div>signIn</div>
+  return (
+    <>
+      <Helmet title="Sign In" />
+      <div>signIn</div>
+    </>
+  )
 }
