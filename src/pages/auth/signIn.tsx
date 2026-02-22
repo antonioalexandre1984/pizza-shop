@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
 import { z } from 'zod'
 
 const signInForm = z.object({
@@ -22,12 +23,22 @@ export const SignIn = () => {
   })
 
   async function handleSignIn(data: SignInFormData) {
-    console.log(data)
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(true)
-      }, 2000),
-    )
+    try {
+      console.log(data)
+      // throw new Error('Simulated error') // Simulate an error for demonstration
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve(true)
+        }, 2000),
+      )
+      toast.success(
+        'Enviamos um link de acesso para seu email. Verifique sua caixa de entrada.',
+      )
+    } catch {
+      toast.error(
+        'Credenciais inválidas. Por favor, verifique seu email e tente novamente.',
+      )
+    }
   }
 
   return (
