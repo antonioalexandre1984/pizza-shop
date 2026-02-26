@@ -1,4 +1,4 @@
-import { Pagination } from '@/components/Pagination'
+import { Pagination } from '@/components/Interfaces/Pagination'
 import {
   Table,
   TableBody,
@@ -18,7 +18,6 @@ export const Orders = () => {
         <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
           Pedidos
         </h1>
-
         <div className="space-y-2.5">
           <OrderTableFilters />
           {/* Form responsivo: stack no mobile, row no desktop */}
@@ -48,14 +47,16 @@ export const Orders = () => {
             </Table>
           </div>
 
-          <Pagination
-            pageIndex={0}
-            totalCount={150}
-            perPage={10}
-            onPageChange={function (page: number): void {
+          <div className="py-2">
+            <Pagination
+              pageIndex={0}
+              totalCount={150}
+              perPage={10}
+              /*   onPageChange={function (page: number): void {
               throw new Error('Function not implemented.')
-            }}
-          />
+            }} */
+            />
+          </div>
         </div>
       </div>
     </>
