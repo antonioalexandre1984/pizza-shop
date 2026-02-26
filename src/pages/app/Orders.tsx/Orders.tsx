@@ -1,9 +1,10 @@
+import { Pagination } from '@/components/Pagination'
 import {
-    Table,
-    TableBody,
-    TableHead,
-    TableHeader,
-    TableRow,
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from '@/components/ui/table'
 import { Helmet } from 'react-helmet-async'
 import { OrderTableFilters } from './OrderTableFilters'
@@ -46,6 +47,15 @@ export const Orders = () => {
               </TableBody>
             </Table>
           </div>
+
+          <Pagination
+            pageIndex={0}
+            totalCount={150}
+            perPage={10}
+            onPageChange={function (page: number): void {
+              throw new Error('Function not implemented.')
+            }}
+          />
         </div>
       </div>
     </>
