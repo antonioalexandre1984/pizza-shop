@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { DollarSign } from 'lucide-react'
+import { NotebookPenIcon } from 'lucide-react'
 
 export const DayOrdersAmountCard = () => {
   return (
@@ -8,7 +8,7 @@ export const DayOrdersAmountCard = () => {
         <CardTitle className="text-base font-semibold">
           Relação de pedidos do dia
         </CardTitle>
-        <DollarSign className="h-4 w-4 text-emerald-500" />
+        <NotebookPenIcon className="h-4 w-4 text-emerald-500" />
       </CardHeader>
       <CardContent className="space-y-1">
         <span className="text-2xl font-bold tracking-tight">35</span>

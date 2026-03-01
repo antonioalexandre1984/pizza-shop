@@ -6,6 +6,7 @@ import { Dashboard } from './app/Dashboard'
 import { Orders } from './app/Orders.tsx/Orders'
 import PrivacyPolicyPage from './app/PrivacyPolicies'
 import TermsPage from './app/TermsPage'
+import { NotFound } from './auth/404NotFound'
 import { SignIn } from './auth/signIn'
 import { SignUp } from './auth/signup'
 
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/dashboard',
